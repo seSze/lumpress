@@ -63,7 +63,7 @@ $router->group(['prefix' => config('wordpress.url.backend_prefix')], function ($
         $router->get('load-styles.php', 'FileController@loadStyles');
         $router->get('load-scripts.php', 'FileController@loadScripts');
 
-        $router->get('/{script}.php', 'AdminController@load');
+//        $router->get('/{script}.php', 'AdminController@load');
         $router->post('/{script}.php', 'AdminController@load');
 
         FileStreamRoutes::get($router);

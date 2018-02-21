@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 class FileController extends BaseController
 {
     /**
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * @param Request $request
      * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\BinaryFileResponse
      */

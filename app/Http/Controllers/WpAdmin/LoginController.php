@@ -8,6 +8,10 @@ namespace App\Http\Controllers\WpAdmin;
  */
 class LoginController extends BaseController
 {
+    public function __construct()
+    {
+        
+    }
     /**
      * @return string
      */
