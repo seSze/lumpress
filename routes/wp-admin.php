@@ -57,8 +57,11 @@ $router->group(['prefix' => config('wordpress.url.backend_prefix')], function ($
         $router->post('admin-ajax.php', 'AjaxAdminController@update');
 
         // 5. Posts
-        $router->get('edit.php', 'PostsController@index');
-        $router->post('post.php', 'PostsController@update');
+//        $router->get('edit.php', 'PostsController@index');
+//        $router->post('post.php', 'PostsController@update');
+//
+//        $router->get('post-new.php', 'PostsController@create');
+//        $router->post('post.php', 'PostsController@store');
 
         $router->get('load-styles.php', 'FileController@loadStyles');
         $router->get('load-scripts.php', 'FileController@loadScripts');

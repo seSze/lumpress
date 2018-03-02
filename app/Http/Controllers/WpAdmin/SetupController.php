@@ -2,9 +2,18 @@
 
 namespace App\Http\Controllers\WpAdmin;
 
-
-class SetupController
+/**
+ * @author    Sebastian Szczepański
+ * @copyright ably
+ */
+class SetupController extends Controller
 {
+    /**
+     */
+    public function __construct()
+    {
+    }
+
     /**
      * @return \Illuminate\View\View
      */

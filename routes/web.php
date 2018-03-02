@@ -11,6 +11,23 @@
 |
 */
 
+use App\Models\Post;
+
 $router->get('/', function () use ($router) {
+
+    $s = \App\Models\Page::published()->get()->toArray();
+
+
+    dump($s);die();
+    
     return $router->app->version();
 });
+
+// Post list
+// show post
+// show category
+// show tag
+foreach (config('wordpress.posts.routes') as $postType => $data) {
+    $router->get($data['route'], 'PostsController@show');
+}
+//$router->get(config('wordpress.posts.routes.post.route'), 'PostsController@show');
