@@ -14,3 +14,10 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+// Post list
+// show post
+// show category
+// show tag
+
+$router->get('/{slug}', 'PostsController@show');

@@ -29,11 +29,21 @@ class PostsController extends BaseController
      */
     public function update()
     {
-        $message = app('request')->get('message');
-
-        if ($message == "1" || $message = "6") {
-            // post updated
-        }
+//        $message = app('request')->get('message');
+//
+//        if ($message == "1" || $message = "6") {
+//            // post updated
+//        }
         return $this->runAdminWithMenu('edit.php');
+    }
+
+    public function create()
+    {
+        $this->runAdminWithMenu('post-new.php');
+    }
+
+    public function store()
+    {
+        $this->runAdminWithMenu('post-new.php');
     }
 }
