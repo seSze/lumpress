@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\WpAdmin;
 
+use App\Http\Controllers\Controller;
+
 /**
  * @author    Sebastian Szczepański
  * @copyright ably
