@@ -1,8 +1,11 @@
 <?php
 
 return [
-    'core' => storage_path('/wordpress'),
+    'core'  => storage_path('/wordpress'),
     'debug' => env('APP_DEBUG'),
+    'theme' => [
+        'views' => 'views'
+    ], 
     'url'   => [
         'backend'        => rtrim(env('APP_BACKEND_URL'), '/'),
         'site'           => rtrim(env('APP_URL'), '/'),
@@ -11,9 +14,9 @@ return [
     ],
 
     'auth' => [
-        'key'         => env('WP_AUTH_KEY'),
-        'salt'        => env('WP_AUTH_SALT'),
-        'secure' => [
+        'key'      => env('WP_AUTH_KEY'),
+        'salt'     => env('WP_AUTH_SALT'),
+        'secure'   => [
             'key'  => env('WP_SECURE_AUTH_KEY'),
             'salt' => env('WP_SECURE_AUTH_SALT'),
         ],
@@ -26,5 +29,16 @@ return [
     'noce' => [
         'key'  => env('WP_NONCE_KEY'),
         'salt' => env('WP_NONCE_SALT'),
+    ],
+
+    'posts' => [
+        'routes' => [
+            'post'          => [
+                'route'      => '/{slug}',
+                'post_types' => ['post', 'page'],
+            ],
+        ],
+
+        'types' => [],
     ],
 ];

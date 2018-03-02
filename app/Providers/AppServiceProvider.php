@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
+use App\Support\ThemeBladeDirectory;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    const CONFIGURE = [
+        'database', 'wordpress', 'services', 'view'
+    ];
     /**
      * Register any application services.
      *
@@ -13,13 +17,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        app('view')->addNamespace('theme', ThemeBladeDirectory::get());
     }
 
     public function boot()
     {
-        app()->configure('database');
-        app()->configure('wordpress');
-        app()->configure('services');
+        foreach (static::CONFIGURE as $config) {
+            app()->configure($config);
+        }
     }
 }
